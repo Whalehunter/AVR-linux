@@ -35,10 +35,8 @@ Zodra flycheck niet meer die error geeft, dan is het zaak om een definition toe 
 
 Al check je de `avr/io.h` dan zie je al snel n boel `#ifndef` waar achter atmel microcontroller types staan. Om te fixen dat al die definitions werken van je board, voeg dit voor de `#include <avr/io.h>` in:
 
-	...
 	#ifndef __AVR_ATmega328P__
 	#define __AVR_ATmega328P__
 	#endif
-	...
-	#include <avr/io.h>
-	...
+
+Verander `__AVR_ATmega328P__` naar wens als je niet de default `-a` gebruikt van het script.
