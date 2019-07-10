@@ -49,7 +49,7 @@ Zodra flycheck niet meer die error geeft, dan is het zaak om de board te definen
 
 ### Text editor zonder IDE ###
 
-Emacs of niet, als je text editor een checker heeft, en hij geeft aan dat *PORTB1* of iets in die trant undefined is, zoek dan in `avr/io.h` naar jouw board en sleur/pleur die *define* naar een regel boven `#include <avr/io.h>` om de errors te laten verdwijnen. Voorbeeld:
+Emacs of niet, als je text editor een checker heeft, en hij geeft aan dat `PORTB1 `of iets in die trant undefined is, zoek dan in `avr/io.h` naar jouw board en sleur/pleur die `#define` naar een regel boven `#include <avr/io.h>` om de errors te laten verdwijnen. Voorbeeld:
 
     ...
     #ifndef __AVR_ATmega328P__
@@ -91,7 +91,7 @@ Een voorbeeld van een `stty` command:
     $ stty -F /dev/ttyACM0 speed 9600 cs8 parenb -cstopb
 Hier is de port **/dev/ttyACM0**, met een baudrate van **9600**, **8** data bits, een **even**-parity bit en **1** stopbit. Als de stdout van `stty` niet gelijk is aan de baudrate of er gezeurd wordt over dat de port busy is, wacht dan ff en probeer het opnieuw.
   * Bij **odd**-parity vervang je `parenb` voor `parodd`
-  * Bij **Geen** parity laat je beide weg
+  * Bij **geen** parity laat je beide weg
   * Bij **twee** stopbits gebruik je `cstopb` i.p.v. `-cstopb`
 
 Je zou nu bytes kunnen schrijven d.m.v:
